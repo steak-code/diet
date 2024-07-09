@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -38,6 +39,8 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_host=1, x_proto=1)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 app.logger.setLevel(logging.INFO)
 
+line_channel_secret = os.getenv('line_channel_secret')
+line_channel_access_token = os.getenv('line_channel_access_token')
 
 handler = WebhookHandler(line_channel_secret)
 
