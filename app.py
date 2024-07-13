@@ -338,4 +338,4 @@ def handle_message(event):
             )
 
 if __name__ == "__main__":
-    app.run(port=port)
+    app.run(port=5000)
